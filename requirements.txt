@@ -1,6 +1,6 @@
-Flask
-opencv-python
+fastapi
+uvicorn
+opencv-python-headless
 easyocr
 numpy
 pillow
-gunicorn
