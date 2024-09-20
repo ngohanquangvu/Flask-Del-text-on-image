@@ -1,10 +1,12 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import StreamingResponse
-import cv2
+import cv2, os
 import easyocr
 import numpy as np
 from io import BytesIO
 from PIL import Image
+
+os.environ['USE_NNPACK'] = '0'
 
 app = FastAPI()
 
@@ -45,4 +47,4 @@ def hello():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
